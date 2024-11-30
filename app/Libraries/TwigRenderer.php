@@ -37,7 +37,6 @@ class TwigRenderer
      */
     private function registerFunctions()
     {
-        // Función para obtener datos "old" de CodeIgniter
         $this->twig->addFunction(new TwigFunction('old', function ($key) {
             return old($key);
         }));
