@@ -3,27 +3,30 @@
 namespace App\Controllers;
 
 use App\Models\PersonaModel;
+use App\Libraries\TwigRenderer;
 
 class PersonaController extends BaseController
 {
     protected $personaModel;
+    protected $twig;
 
     public function __construct()
     {
         $this->personaModel = new PersonaModel();
+        $this->twig = new TwigRenderer(); // Instancia la clase TwigRenderer
     }
 
     // Mostrar lista de personas
     public function index()
     {
         $data['personas'] = $this->personaModel->findAll();
-        return view('personas/index', $data);
+        $this->twig->render('personas/index', $data); // Renderiza usando Twig
     }
 
     // Mostrar formulario para crear nueva persona
     public function create()
     {
-        return view('personas/create');
+        $this->twig->render('personas/create'); // Renderiza el formulario
     }
 
     // Guardar nueva persona
@@ -36,7 +39,7 @@ class PersonaController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return view('personas/create', [
+            return $this->twig->render('personas/create', [
                 'validation' => $this->validator,
             ]);
         }
@@ -60,7 +63,7 @@ class PersonaController extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Persona con ID $id no encontrada");
         }
 
-        return view('personas/edit', $data);
+        $this->twig->render('personas/edit', $data); // Renderiza el formulario de edición
     }
 
     // Actualizar una persona
@@ -73,7 +76,7 @@ class PersonaController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return view('personas/edit', [
+            return $this->twig->render('personas/edit', [
                 'validation' => $this->validator,
                 'persona' => $this->personaModel->find($id),
             ]);
@@ -101,4 +104,3 @@ class PersonaController extends BaseController
         return redirect()->to('/personas');
     }
 }
-?>

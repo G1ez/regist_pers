@@ -1,0 +1,30 @@
+CRITICAL - 2024-11-30 16:39:17 --> Twig\Error\SyntaxError: Unknown "old" function.
+[Method: GET, Route: personas/create]
+in APPPATH\Views\personas\create.twig on line 23.
+ 1 VENDORPATH\twig\twig\src\ExpressionParser.php(540): Twig\ExpressionParser->getFunction('old', 23)
+ 2 VENDORPATH\twig\twig\src\ExpressionParser.php(329): Twig\ExpressionParser->getFunctionNode('old', 23)
+ 3 VENDORPATH\twig\twig\src\ExpressionParser.php(266): Twig\ExpressionParser->parsePrimaryExpression()
+ 4 VENDORPATH\twig\twig\src\ExpressionParser.php(103): Twig\ExpressionParser->getPrimary()
+ 5 VENDORPATH\twig\twig\src\Parser.php(158): Twig\ExpressionParser->parseExpression()
+ 6 VENDORPATH\twig\twig\src\Parser.php(95): Twig\Parser->subparse(null, false)
+ 7 VENDORPATH\twig\twig\src\Environment.php(539): Twig\Parser->parse(Object(Twig\TokenStream))
+ 8 VENDORPATH\twig\twig\src\Environment.php(567): Twig\Environment->parse(Object(Twig\TokenStream))
+ 9 VENDORPATH\twig\twig\src\Environment.php(395): Twig\Environment->compileSource(Object(Twig\Source))
+10 VENDORPATH\twig\twig\src\Environment.php(357): Twig\Environment->loadTemplate('__TwigTemplate_7fc73d2037ae3bcb23ad64ce39d0a7d9', 'personas/create.twig')
+11 VENDORPATH\twig\twig\src\Environment.php(320): Twig\Environment->load('personas/create.twig')
+12 APPPATH\Libraries\TwigRenderer.php(19): Twig\Environment->render('personas/create.twig', [])
+13 APPPATH\Controllers\PersonaController.php(29): App\Libraries\TwigRenderer->render('personas/create')
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PersonaController->create()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PersonaController))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\codeigniter4\\public\\index.php')
+INFO - 2024-11-30 16:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-30 16:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
